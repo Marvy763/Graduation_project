@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block head %}
+{{ share.load() }}
+{% endblock %}
+
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+{% block content %}
+<div class="show-single-post">
+  <!-- <div class="banner"> -->
+    {% if post.banner_img %}
+    <img class = "banner"src="{{ url_for('static',filename='uploaded_img/'+ post.banner_img) }}">
+    {% else %}
+    <img class = "banner"src="{{ url_for('static',filename='img/banner.jpg') }}">
+    {% endif %}
+  <!-- </div> -->
+
+  <div class="blog">
+{% include 'messages.html' %}
+    <h1 class="title">{{ post.title }}</h1>
+    <p class="published"><span> published at - {{ post.date_posted.strftime('%b %d,%Y at %H:%M') }} </span></p>
+    <p class="published"><span>  views: {{ post.views }} </span></p>
+    <div class="article">
+      {{ post.content|safe }}
+    </div>
+    <div class="about-author">
+      <div class="card">
+        <div class="profile-sidebar">
+           {% if post.author.profile_pic %}
+    <img class="profile-image" src="{{ url_for('static',filename='uploaded_img/'+ post.author.profile_pic) }}" alt="">      
+
+    {% else %}
+    <!-- default user image -->
+    <img class="profile-image" src="{{ url_for('static',filename='img/default_profile_pic.png') }}" alt="">
+    {% endif %}
+        </div>
+
+        <div class="profile-main">
+          <div class="profile-name">{{ post.author.name }}</div>
+          <div class="profile-position">{{ post.author.job }}</div>
+          <div class="profile-body">
+            {% if post.author.description %}
+            {{ post.author.description }}
+            {% else %}
+            there no description available.
+            {% endif %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <h1 class="sub-heading">
+    {{ share.create(title='Share : ',sites='facebook, twitter,linkedin') }}
+  </h1>
+  <h1 class="sub-heading">Comment Section</h1>
+  <br><br>
+
+   <div class="comment-section">
+    <h2>{{ comments|length }} Comments</h2>
+    {% if comments %}
+    {% for comment in comments %}
+<!--   start comment message -->
+  <div class="container-6">
+  <div class="box">
+    <div class="user-info">
+      {% if comment.commenter.profile_pic %}
+    <img class="comment-profile" src="{{ url_for('static',filename='uploaded_img/'+ comment.commenter.profile_pic) }}" alt="">      
+
+    {% else %}
+    <!-- default user image -->
+    <img class="comment-profile" src="{{ url_for('static',filename='img/default_profile_pic.png') }}" alt="">
+    {% endif %}
+      <div class="commt-info">
+      <p class="comment-user">
+        <a href="{{ url_for('user_profile',pk=comment.commenter.id)}}">
+      {{ comment.commenter.name }}</a></p>
+      <p class="comment-user-date">{{ comment.date_pub.strftime('%b %d,%Y at %H:%M') }}</p></div>
+    </div>
+    <div class="sub-box">
+       <p class="message">{{ comment.message }}</p>
+  {% if current_user.id == comment.author_id or current_user.job == 'admin' %}
+  <a class="button" href="{{ url_for('edit_comment',pk= comment.id ) }}">
+  Edit</a>
+  <a class="button" href="{{ url_for('delcomment',pk= comment.id)}}">Delete</a>
+  {% endif %}
+    </div>
+
+    </div>
+    </div>
+<!--   end comment -->
+  {% endfor %}
+  {% else %}
+  <h2>there is no one comment yet. be first comment.</h2>
+  {% endif %}
+  
+    <div id="popup1" class="overlay">
+      <div class="popup">
+        <h2>Edit Comment</h2>
+        <a class="close" href="{{ url_for('show_post',slug = post.slug) }}">&times;</a>
+        <form method="post" action="" class="content">
+            {{ comment_edit_form.hidden_tag() }}
+          <textarea name="message" id="" cols="31" rows="5" class="message-area">{{ comment.message }}</textarea>
+          <!-- <a href="#" class="sub-btn">Submit</a> -->
+          {{ comment_edit_form.submit(class="sub-btn",value="Save")}}
+         
+        </form>
+      </div>
+    </div>
+<!--     end comment -->
+   
+  {% if current_user.is_authenticated %}
+   <form action="" method="post" class="leave-comment">
+    <h2 class="sub-title">Leave a comment</h2>
+      <textarea name="" id="" cols="30" rows="5" placeholder="Leave a comment.."></textarea>
+     <a href="" class="button">Send</a>
+   </form>
+    {% else %}
+    <div class="article">
+      <a href="{{ url_for('login') }}">Login Here</a> to leave a comment.
+    </div>
+
+    {% endif %}
+  <!-- <h1 class="sub-heading">Read more</h1> -->
+
+  <!-- blog section
+  <section class="blogs-section">
+    <div class="blog-card">
+      <img src="img/header.png" class="blog-image" alt="">
+      <h1 class="blog-title">Lorem ipsum dolor sit amet consectetur.</h1>
+      <p class="blog-overview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt incidunt fugiat quos porro repellat harum. Adipisci tempora corporis rem cum.</p>
+      <a href="/" class="btn dark">read</a>
+    </div>
+  </section> -->
+</div>
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript">
+    $(document).ready(function(){
+        console.log("window is loaded")
+        $("#popup1").modal("show")
+    })
+</script>
+{% endblock %}
+
+

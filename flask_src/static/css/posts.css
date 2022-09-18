@@ -1,0 +1,217 @@
+.container-4{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background: #e9f4fd;
+  width: 100%;
+}
+.container-4 .col-lg-4{
+   width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.container-4 .search-info{
+    display: flex;
+    width: 100%;
+    padding-left: 70px;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
+.container-4 .search-info .sub-title{
+  text-transform:capitalize;
+  font-size: 35px;
+  font-weight:600;
+  color:#222;
+}
+.container-4 .search-info .sub-title::after{
+  content:"";
+  display: block;
+  width:3rem;
+  height:6px;
+  background:#00bcd4;
+  margin-bottom:25px;
+  border-radius:5px;
+}
+.container-4 .news-wrap {
+  width: 100%;
+  height: 100vh;
+  padding: 30px 0;
+  background: #f5f5f5;
+}
+.container-4 .news-grid {
+  position: relative;
+  display:flex;
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px 0px rgba(50, 50, 50, 0.16);
+  margin: 10px 0px 10px 0px;
+}
+
+.container-4 .news-grid-image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  flex-basis:50%;
+}
+
+.container-4 .news-grid-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.container-4 .news-grid-box {
+  display: block;
+  position: absolute;
+  text-align: center;
+  background: #009688;
+  left: -80px;
+  top: 15px;
+  padding: 10px;
+  transition: 0.5s;
+}
+
+.container-4 .news-grid-box h1 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 5px;
+}
+
+.container-4 .news-grid-box p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
+.container-4 .news-grid-txt {
+  padding: 25px 25px 0 25px;
+   flex-basis:50%;
+}
+
+.container-4 .news-grid-txt span {
+  color: #26ccca;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.container-4 .news-grid-txt h2 {
+  color: #111;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 10px 0px 5px 0px;
+}
+
+.container-4 .news-grid-txt ul {
+  padding: 0;
+  margin: 0;
+}
+
+.container-4 .news-grid-txt ul li {
+  list-style: none;
+  display: inline-block;
+  color: #999;
+  font-size: 14px;
+  font-weight: 300;
+  margin: 8px 10px 8px 0px;
+  letter-spacing: 1px;
+}
+
+ .container-4 .news-grid-txt ul li i {
+  color: #26ccca;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 5px;
+}
+.container-4 .news-grid-txt .utils-btn{
+  display: inline-block;
+}
+ .container-4 .news-grid-txt .txt {
+  color: #222;
+  line-break: anywhere;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 170%;
+  letter-spacing: 1.5px;
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 15px;
+  margin-bottom: 9px;
+  height: 100px;
+}
+
+ .container-4 .news-grid-txt a {
+  color: #fff;
+  background: #009688;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 1px;
+  text-decoration-line: none;
+  transition: 0.5s;
+}
+
+/*Hover-Section*/
+ .container-4 .news-grid:hover .news-grid-box {
+  left: 15px;
+  transition: 0.5s;
+}
+
+.container-4 .news-grid:hover .news-grid-image img {
+  filter: grayscale(1);
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+ .container-4 .news-grid:hover .news-grid-txt a {
+  text-decoration-line: none;
+  color: #fff;
+  letter-spacing: 2px;
+  transition: 0.5s;
+}
+.container-7{
+  padding-right: 70px;
+  padding-left: 70px;
+}
+.pagination{
+  width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 60px;
+}
+.pagination a {
+    color: black;
+    /*float: left;*/
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: #e7a34e;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+@media screen and (max-width:700px){
+  .container-4 .news-grid{
+    flex-direction:column;
+  }
+}

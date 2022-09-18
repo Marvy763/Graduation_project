@@ -1,0 +1,27 @@
+{
+    // home page
+    "welcome":"Welcome",
+    "welcome_msg":"we’re here with answers, guidance, and support.",
+    "service_title":"our services",
+    "service_one":"High Detection",//use in about section 
+    "service_two":"Medical Advice",//use in about section 
+    "service_three":"24/7 Guide Service", //use in about section 
+    "service_four":"Free Account",
+    "latest_posts_title":"Latest Posts",
+    "all_blog_title":"All Blogs",
+    "symptoms_title":"Symptoms",
+    "symptoms_one":"Lorem ipsum dolor, sit amet consectetur adipisicing elit!",
+    "symptoms_two":"Lorem ipsum dolor, sit amet consectetur adipisicing elit!",
+    "symptoms_three":"Lorem ipsum dolor, sit amet consectetur adipisicing elit!",
+    "symptoms_four":"Lorem ipsum dolor, sit amet consectetur adipisicing elit!",
+    "learn_more":"learn",
+    
+    //About page
+    "about_us_title":"about us",
+    "about_us_sub":"why choose us?",
+    "about_info_one":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure numquam nulla iusto corporis dolor commodi libero, vitae obcaecati optio rerum ab culpa nesciunt, earum mollitia quasi ipsam non. Aliquid, iure.",
+    "about_info_two":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure numquam nulla iusto corporis dolor commodi libero, vitae obcaecati optio rerum ab culpa nesciunt, earum mollitia quasi ipsam non. Aliquid, iure.",
+    "our_team_title":"our team",
+    ""//team members
+
+}

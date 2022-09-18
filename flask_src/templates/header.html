@@ -1,0 +1,90 @@
+<div class="wrapper">
+  <nav>
+    <input type="checkbox" id="show-search">
+    <input type="checkbox" id="show-menu">
+    <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+    <div class="content">
+      <div class="logo"><a href="{{ url_for('index') }}">
+        <img class="logo-img" src="{{ url_for('static',filename='img/logo-r.png') }}" alt="">
+      </a></div>
+      <ul class="links">
+        <li><a href="{{ url_for('top_posts') }}">Trending</a></li>
+        <li><a href="{{ url_for('posts') }}">Blog</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('advices') }}">Advices</a></li>
+        <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+
+        <!-- <li>
+          <a href="#" class="desktop-link">Language</a>
+          <input type="checkbox" id="show-features">
+          <label for="show-features">Language</label>
+          <ul>
+            <li><a href="#">Arabic</a></li>
+            <li><a href="#">English</a></li>
+          </ul>
+        </li>
+ -->
+
+
+        {% if current_user.is_authenticated %}
+        <li><a href="{{ url_for('upload') }}">Predict</a></li>
+        
+         <li>
+          <a href="#" class="desktop-link">Hello, {{ current_user.name|capitalize }}</a>
+          <input type="checkbox" id="show-services">
+          <label for="show-services">{{ current_user.name }}</label>
+          <ul>
+            <li><a href="{{ url_for('user_profile',pk = current_user.id) }}">Profile</a></li>
+            
+            <li>
+              <a href="#" class="desktop-link">Dashboard</a>
+              <input type="checkbox" id="show-items">
+              <label for="show-items">Settings</label>
+              <ul>
+                <li><a href="{{ url_for('edit_user',pk=current_user.id) }}">Manage Account</a></li>
+                <li><a href="{{ url_for('change_password',pk=current_user.id) }}">Privacy</a></li>
+                {% if current_user.job == 'admin' %} 
+                <li><a href="{{ url_for('pending_posts') }}">Pending Posts</a></li>
+                {% endif %}
+                {% if current_user.job != 'patient' %}
+                <li><a href="{{ url_for('add_post') }}">New Post</a></li>
+                {% if current_user.job == 'doctor' %}            
+                <li><a href="{{ url_for('pending_posts_user',pk = current_user.id) }}">Pending Posts</a></li>
+                {% endif %}
+                {% endif %}
+                
+              </ul>
+            </li>
+
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+          </ul>
+        </li> 
+        {% endif %}
+
+        
+        
+        
+      </ul>
+    </div>
+    <div class="btn-cta">
+    {% if not current_user.is_authenticated %}
+    <a href="{{ url_for('login') }}">
+      <label class="search-icon login">
+      <i class="fas fa-right-to-bracket"></i> <span class="clear">Login</span>
+      </label>
+    </a> 
+     <!-- <a href="{{ url_for('register') }}">
+      <label class="search-icon register">
+      <i class="fas fa-user-plus"></i> <span class="clear">join</span>
+      </label>
+    </a> -->
+    {% endif %}
+    <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+      </div>
+    <form action="{{ url_for('search') }}" method="post" class="search-box">
+      {{ form.hidden_tag() }}
+      <input type="text" placeholder="Type Something to Search..." name="searched" required>
+      <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+    </form>
+  </nav>
+</div>

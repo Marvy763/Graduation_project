@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+{% block content %}
+    
+    <div class="container-2">
+
+{% include 'messages.html' %}
+
+        <div class="login-form">
+            <h1>Login</h1>
+            
+
+            
+            <form action="" method="post">
+                <div class="txt_field">
+                    {{ form.hidden_tag() }}
+
+
+                    
+                    {{ form.username() }}
+                    {{ form.username.label(class="txt_field-input") }}
+            <!-- 
+                    <input type="text" id="user" name="user" autofocus>
+                    <label for="user" class="txt_field-input">Username</label> -->
+                    
+                   
+
+                </div>
+
+                <div class="txt_field">
+
+            {{ form.password() }}
+            {{ form.password.label(class="txt_field-input") }}
+                    <!-- <input type="password" id="pass" name="pass">
+                    <label for="pass" class="txt_field-input">Password</label> -->
+                     
+                </div>
+
+                {{ form.submit(class="btn-cta") }}
+
+                <!-- <button class="btn-cta">Log in</button> -->
+                <div class="signup_link">
+                    Not a member? <a href="{{ url_for('register') }}">Signup</a>
+                  </div>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}

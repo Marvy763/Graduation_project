@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ current_user.name }} Profile{% endblock %}
+
+
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+
+{% block content %}
+<h1 class="tab-heading">
+  <div class="profile-card">
+    {% if user.profile_pic %}
+    <img class="profile-image" src="{{ url_for('static',filename='uploaded_img/'+ user.profile_pic) }}" alt="">      
+
+    {% else %}
+    <!-- default user image -->
+    <img class="profile-image" src="{{ url_for('static',filename='img/default_profile_pic.png') }}" alt="">
+    {% endif %}
+    <div class="profile-info">
+       <div class="profile-name">
+         {{ user.name }}
+       </div>
+      <div class="profile-position">
+        {{ user.job }}
+      </div>
+    </div>
+  </div>
+  {% if user.id == current_user.id %}
+  <div class="btns">
+    <a class="btn-edit" href="{{ url_for('edit_user',pk=current_user.id) }}">edit profile</a>
+  </div>
+  {% endif %}
+  
+</h1>
+ <div class="profile-content">
+<!-- about user section -->
+<div class="profile-desc">
+  <div class="profile-sub-title">about</div>
+  <div class="profile-about">
+    {% if user.description %}
+    {{ user.description }}
+    {% else %}
+    No Description is Provided
+    {% endif %}
+  </div> 
+</div>
+</div>
+
+<!-- 
+<div class="profile-user-posts">
+  <div class="profile-sub-title">posts</div>
+
+</div>
+</div>
+
+ -->
+
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}

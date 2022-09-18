@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Prediction Results{% endblock %}
+
+
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+
+{% block content %}
+<div class="container-2">
+  <div class="box-container">
+<div class="result">
+  <div class="bar">
+    Status
+  </div>
+  <div class="desc">
+    normal
+  </div>
+  <hr>
+  <div class="bar">
+    type
+  </div>
+  <div class="desc">
+    normal
+  </div>
+  <hr>
+  <div class="bar">
+    Description
+  </div>
+  <div class="desc">
+    No Description Provided.
+  </div>
+</div>
+    </div>
+  <a href="{{ url_for('upload') }}" class="res">Start over</a>
+</div>
+
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}

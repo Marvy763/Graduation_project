@@ -1,0 +1,217 @@
+/* flash message */
+@import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css);
+
+.alert .inner {
+  display: block;
+  padding: 6px;
+  margin: 6px;
+  border-radius: 3px;
+  border: 1px solid rgb(180,180,180);
+  background-color: rgb(212,212,212);
+}
+
+.alert .close {
+  float: right;
+  margin: 3px 12px 0px 0px;
+  cursor: pointer;
+}
+
+.alert .inner,.alert .close {
+  color: rgb(88,88,88);
+}
+
+.alert input {
+  display: none;
+}
+
+.alert input:checked ~ * {
+  animation-name: dismiss,hide;
+  animation-duration: 300ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 0s,100ms;
+}
+
+.alert.error .inner {
+  border: 1px solid rgb(238,211,215);
+  background-color: rgb(242,222,222);
+}
+
+.alert.error .inner,.alert.error .close {
+  color: rgb(185,74,72);
+}
+
+.alert.success .inner {
+  border: 1px solid rgb(214,233,198);
+  background-color: rgb(223,240,216);
+}
+
+.alert.success .inner,.alert.success .close {
+  color: rgb(70,136,71);
+}
+
+.alert.info .inner {
+  border: 1px solid rgb(188,232,241);
+  background-color: rgb(217,237,247);
+}
+
+.alert.info .inner,.alert.info .close {
+  color: rgb(58,135,173);
+}
+
+.alert.warning .inner {
+  border: 1px solid rgb(251,238,213);
+  background-color: rgb(252,248,227);
+}
+
+.alert.warning .inner,.alert.warning .close {
+  color: rgb(192,152,83);
+}
+
+@keyframes dismiss {
+  0% {
+    opacity: 1;
+  }
+  90%, 100% {
+    opacity: 0;
+    font-size: 0.1px;
+    transform: scale(0);
+  }
+}
+
+@keyframes hide {
+  100% {
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+  }
+}
+/*login page and register page*/
+/*for text area 
+width: 144%;
+    border: 1px solid #222;
+    border-radius: 20px;
+    height: 80px;
+    margin-top: 15px;
+*/
+.container-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #e9f4fd;
+    width: 100%;
+}
+.login-form{
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+}
+.login-form h1{
+    text-align: center;
+    font-size: 27px;
+    font-weight: 700;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #222;
+}
+.login-form form{
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+.login-form form .txt_field{
+    display: table;
+}
+.login-form .txt_field .txt_field-input{
+    display: table-header-group;
+    margin: 10px 0 ;
+
+}
+.login-form .txt_field input{
+    display: table-row-group;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 145%;
+    border-radius: 20px;
+    border: 1px solid #000;
+    font-size: 16px;
+    text-transform: none;
+}
+.login-form .txt_field input:focus{
+    border: 1px solid #009688;
+    transition: .5s;
+}
+.txt_field-option{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.txt_field-option .option{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+#job-0,#job-1{
+  margin-top: 11px;
+}
+.txt_field textarea{
+  margin-top: 10px;
+  border: 1px solid #565656;
+  border-radius: 20px;
+  width: 145%;
+  height: 100px;
+  resize: none;
+  padding: 10px;
+}
+input:focus + label { 
+    color:#009688;
+    transition: .5s;
+}
+.signup_link{
+    margin: 20px 0 15px;
+    text-align: center;
+    font-size: 16px;
+    color: #777777;
+  }
+  .signup_link a{
+    color: #009688;
+    text-decoration: none;
+  }
+  .signup_link a:hover{
+    text-decoration: underline;
+  }  
+  .register{
+    width: 650px;
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+.register form .txt_field{
+    width: 395px;
+}
+.register form .txt_field span{
+    color: #f00;
+}
+.container-2 .btn-cta{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    border: 1px solid;
+    background: #F7BA68;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fd;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+.login-form .btn-cta:hover{
+    background-color: #E7A34E;
+    transition: .5s;
+}

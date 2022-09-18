@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  /* parallax section */
+  .about .container-1 {
+    max-width: 1500px;
+    margin: 0 auto;
+    font-size: 24px;
+  }
+  .about .parallax {
+    background: url("../img/about-cover.png")
+      repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.336);
+    height: 400px;
+  }
+  .about .info-1{
+    background: url("../img/advices_cover.png")
+      repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.336);
+    height: 400px;
+  }
+  .about .parallax h1 {
+    margin-left: 100px;
+    padding-top: 100px;
+    font-size: 7rem;
+    text-transform: uppercase;
+    color: #565656 ;
+  }
+
+  .about .center-content{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 135px;
+  }
+
+  .about .text-center{
+    text-align: center;
+    padding-bottom: 50px;
+  }
+
+  .center-content .btn-login{
+    padding: 10px;
+    background-color: #009688;
+    color: #fff;
+    border-radius: 15px;
+  }
+  
+  /*-----------/ About Us /-----------*/
+  .about .row {
+    padding: 40px 25px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .about .col-2 {
+    flex-basis: 50%;
+    min-width: 300px;
+  }
+  
+  .about .col-2 img {
+    max-width: 90%;
+    padding: 50px 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .about .row .col-2 h3 {
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    color: #009688;
+  }
+  
+  .about .row .col-2 p {
+    font-size: 1rem;
+    color: #222;
+    line-height: 1.5;
+    padding: 1rem 0;
+  }
+  
+  .about .row .col-2 .icons-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    /*   align-items: flex-start; */
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    cursor: pointer;
+  }
+  .about .row .col-2 .icons-container a{
+    width: 210px;
+  }
+  .about .row .col-2 .icons-container .icons {
+    background: #fff9;
+    padding: 1rem;
+    flex: 1 1 10rem;
+    text-transform: capitalize;
+  }
+  .about .row .col-2 .icons-container .icons i {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #e7a34e;
+  }
+  .about .row .col-2 .icons-container .up {
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  }
+  .about .row .col-2 .icons-container .down {
+    clip-path: polygon(0 0, 100% 0, 83% 100%, 19% 100%);
+  }
+  .about .row .col-2 .icons-container .up:hover,
+  .about .row .col-2 .icons-container .down:hover {
+    background-color: rgba(0, 150, 135, 0.24);
+  }
+  .about .row .col-2 .icons-container .icons span {
+    font-size: 1.2rem;
+    color: #222;
+    display: block;
+  }
+  
+  /* our team section */
+  .about .our-team {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 25px 70px;
+  }
+  .about .heading-title {
+    text-align: center;
+    padding-top: 25px;
+    position: relative;
+    line-height: 60px;
+    color: #555555;
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+  .about .heading-title::after {
+    content: "";
+    background: #009688;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .about .row-2 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .about .col-4 {
+    flex-basis: 20%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .about #our-team h2 {
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+  }
+  .about .item {
+    margin-top: 40px;
+    display: flex;
+    max-width: 350px;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .about .box {
+    border: 2px solid rgb(37, 36, 36);
+    padding: 20px;
+    position: relative;
+    display: flex;
+    width: 500px;
+  }
+  .about .box::before {
+    content: "";
+    position: absolute;
+    border-left: 3px solid #009688;
+    border-top: 3px solid #009688;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 25px;
+  }
+  .about .box::after {
+    content: "";
+    position: absolute;
+    border-right: 3px solid #009688;
+    border-bottom: 3px solid #009688;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 25px;
+  }
+  .about .box .inner {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  /*contact section*/
+  .about .contact-row {
+    background-color: #e9f4fd;
+    padding: 25px;
+  }
+  .about .row .contact-col {
+    padding-left: 40px;
+  }
+  .about .row .col-1 .contact-section {
+    margin-top: 2.5rem;
+  }
+  .about .row .col-1 h3 {
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    color: #009688;
+  }
+  .about .row .col-1 .info {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .about .row .col-1 .info i {
+    font-size: 30px;
+    color: #e7a34e;
+    margin-bottom: 2rem;
+  }
+  .about .row .col-1 .info p {
+    color: #222;
+    font-size: 1.3rem;
+    padding: 5px;
+  }
+  .info h3{
+    font-size: 25px;
+    padding-bottom: 13px;
+  }
+  .info h4{
+    text-transform: capitalize;
+    color: #565656;
+  }
+  
+  /*  review section */
+  .about .testimonial {
+    padding-bottom: 30px;
+  }
+  .about .testimonial .col-3 {
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.5s;
+  }
+  
+  .about .testimonial .col-3 img {
+    width: 50px;
+    margin-top: 20px;
+    border-radius: 50%;
+  }
+  
+  .about .testimonial .col-3:hover {
+    transform: translateY(-10px);
+  }
+  
+  .about .fa.fa-quote-left {
+    font-size: 34px;
+    color: #009688;
+  }
+  .about .fa,
+  .about .far {
+    color: #e7a34e;
+  }
+  .about .col-3 p {
+    font-size: 16px;
+    line-height: 1.5rem;
+    margin: 12px 0;
+    color: #777777;
+  }
+  
+  .about .testimonial .col-3 h3 {
+    font-weight: 600;
+    color: #555555;
+    font-size: 18px;
+  }
+  .about .small-container {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .about .col-3 {
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+  }
+  
+  .about .col-3 img {
+    width: 100%;
+  }
+  /*trail*/
+  .about .trail-1 {
+    max-width: 1400px;
+    height: 430px;
+  }
+  .about .trail-2 {
+    max-width: 1400px;
+    height: 500px;
+  }
+  

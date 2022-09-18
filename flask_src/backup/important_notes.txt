@@ -1,0 +1,67 @@
+total photo dataset = 1269 items
+
+
+user_dashboard
+tab-1 -->user info
+tab-2 -->update user
+tab-3 -->change password (security)
+---------------------------------------------
+
+405 - method not allowed
+404 - not found
+500 - server error
+
+# to make live flask server:
+
+# on cmd
+set FLASK_ENV=development
+set FLASK_APP=app.py
+flask run
+
+
+# on powershell
+$env:FLASK_ENV = "development"
+$env:FLASK_APP = "hello.py"
+flask run
+
+#apply model to mysql
+from hello import db
+db.create_all()
+
+#apply migration
+flask db init
+flask db migrate -m 'Initial Migration'
+#push migration into database
+flask db upgrade
+
+
+
+------------------------------------
+--         hash password
+------------------------------------
+from hello import Users
+u = Users()
+u.password = 'cat'
+u.password  #error msg because password is not readable
+u.pass_hash
+u.verify_pass('cat')  # return 'True'
+u.verify_pass('dog')  # return 'False'
+u2 = Users()
+u2.password = 'cat'
+u2.pass_hash
+
+for radio button
+
+{% if option.id.endswith('0') %}
+    <div class="form-controller">
+     {{ option }} {{ option.label }} </div> 
+  {% endif %}
+  {% if option.id.endswith('1') %}
+  <div class="form-contronller">
+     {{ option }} {{ option.label }} </div>
+  {% endif %}
+
+
+
+jwt secret key= this is blueprint modules with jwt secret key
+flask secret key= this is flask app with deep learning technology

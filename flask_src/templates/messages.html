@@ -1,0 +1,16 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  {% for category, msg in messages %}
+<div class="alert {{ category }}">
+        <input type="checkbox" id="alert4"/>
+        <label class="close" title="close" for="alert4">
+      <i class="icon-remove"></i>
+    </label>
+        <p class="inner">
+            {{ msg }}
+        </p>
+    </div>
+    <br><br><br>
+    {% endfor %}
+  {% endif %}
+{% endwith %}

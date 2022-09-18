@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Profile{% endblock %}
+
+
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+{% block content %}
+
+<div class="manage-profile">
+
+  <div class="manage-profile-title">manage account</div>
+  <hr>
+  {% include 'messages.html' %}
+  <!-- edit profile page -->
+  <div class="edit-profile-section">
+    <div class="manage-profile-subtitle">edit profile</div>
+    <form action="{{ url_for('edit_user',pk=current_user.id) }}" method="post" class="manage-profile-form" enctype="multipart/form-data">
+       {{ edit_user_form.hidden_tag() }}
+      <!--   profile pic here -->
+
+      <div class="center">
+        <div class="form-input">
+          <div class="preview">
+            <img id="file-ip-1-preview">
+          </div>
+          <!-- <label for="file-ip-1">Upload Image</label> -->
+          {{ edit_user_form.profile_pic.label(for="file-ip-1") }}
+          {{ edit_user_form.profile_pic(id="file-ip-1",accept="image/*",onchange="showPreview(event);") }}
+          <!-- <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);"> -->
+
+        </div>
+      </div>
+
+      <div class="manage-profile-txt-field">
+        {{ edit_user_form.name.label(class="manage-profile-label") }}
+        {{ edit_user_form.name(value= name_to_update.name) }}
+      </div>
+      <div class="manage-profile-txt-field">
+        {{ edit_user_form.username.label(class="manage-profile-label") }}
+        {{ edit_user_form.username(class="disabled",value= name_to_update.username) }}
+      </div>
+
+      <div class="manage-profile-txt-field">
+        {{ edit_user_form.email.label(class="manage-profile-label") }}
+        {{ edit_user_form.email(value= name_to_update.email) }}
+      </div>
+
+      <div class="manage-profile-txt-field">
+        {{ edit_user_form.phone.label(class="manage-profile-label") }}
+        {{ edit_user_form.phone(value= name_to_update.phone) }}
+      </div>
+
+      <div class="manage-profile-txt-field">
+        {{ edit_user_form.job.label(class="manage-profile-label") }}
+        {{ edit_user_form.job(class="disabled",value= name_to_update.job) }}
+      </div>
+
+      <div class="manage-profile-txt-field">
+         {{ edit_user_form.description.label(class="manage-profile-label") }}
+        <textarea name="description" id="" cols="30" rows="4">{{ name_to_update.description }}</textarea>
+
+      </div>
+          {{ form.submit(class="btn",value="update profile") }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+<script type="text/javascript" src="{{ url_for('static',filename='js/preview.js') }}"></script>
+{% endblock %}

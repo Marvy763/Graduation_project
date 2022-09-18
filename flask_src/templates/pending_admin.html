@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog{% endblock %}
+
+
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+{% block content %}
+
+<!-- post  -->
+<div class="container-4">
+ <div class="search-info">
+  <p class="sub-title">Pending Posts</p>
+</div>
+<br><br><br><br>
+
+  {% include 'messages.html' %}
+
+  {% if posts %}
+{% for post in posts.items %}
+<div class="col-lg-4">
+  <div class="container-7">
+    <div class="news-grid">
+      <div class="news-grid-image">
+        
+        {% if post.banner_img %}
+        <img src="{{ url_for('static',filename='uploaded_img/'+ post.banner_img) }}" alt="">
+        {% else %}
+        <img src="{{ url_for('static',filename='img/blog_img.jpg') }}" alt="">
+        {% endif %}
+        <div class="news-grid-box">
+          <h1>{{ post.date_posted.strftime('%d') }}</h1>
+          <p>{{ post.date_posted.strftime('%b') }}</p>
+        </div>
+      </div>
+      <div class="news-grid-txt">
+        <h2>{{ post.title }}</h2>
+        <ul>
+          <li><i class="fa fa-calendar" aria-hidden="true"></i>{{ post.date_posted.strftime('%b %d,%Y') }}</li>&nbsp;
+          <li><i class="fa fa-eye" aria-hidden="true"></i>{{ post.views }}</li><br>
+          <li><i class="fa fa-user" aria-hidden="true"></i>{{ post.author.name }}</li>
+        </ul>
+        <div class="txt">
+        {{ post.content|truncate(200,true)|safe  }}
+        </div>
+        <div class="utils-btn">
+        <a href="{{ url_for('show_post',slug=post.slug) }}">Read More...</a>
+        {% if current_user.job == 'admin' %}
+         <a href="{{ url_for('check',id=post.id) }}" class="warning">Accept</a>
+         <a href="{{ url_for('delete_post_admin',id=post.id) }}" class="danger">Delete</a>
+        {% endif %}
+      </div>
+      </div>
+    </div></div>
+  </div>
+  {% endfor %}
+
+<div class="pagination">
+  {% if posts.has_prev %}
+  <a href="{{ url_for('pending_posts', page=posts.prev_num) }}">&laquo;</a>
+  {% endif %}
+  {% for page_num in posts.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=2) %}
+  {% if page_num %}
+  {% if posts.page == page_num %}
+  <a class="active" href="{{ url_for('pending_posts',page=page_num) }}" onclick="onSelect(this)">{{ page_num }}</a>
+  {% else %}
+  <a href="{{ url_for('pending_posts',page=page_num) }}" onclick="onSelect(this)">{{ page_num }}</a>
+  {% endif %}
+
+  {% else %}
+  ...
+  {% endif %}
+  {% endfor %}
+  {% if posts.has_next %}
+  <a href="{{ url_for('pending_posts', page=posts.next_num) }}">&raquo;</a>
+  {% endif %}
+</div>
+<!-- end post -->
+{% else %}
+  <p> there is no posts yet ..</p>
+  {% endif %}
+</div>
+
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}

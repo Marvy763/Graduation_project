@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Post{% endblock %}
+
+
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+{% block content %}
+
+{% if current_user.is_authenticated %}
+
+<!-- Upload  -->
+<div class="add-post">
+<form method="post" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+  <div id="file-upload-form" class="uploader">
+    {{ form.banner_img(id="file-upload",accept="image/*") }}
+  <!-- <input id="file-upload" type="file" name="fileUpload" accept="image/*" /> -->
+
+  <label for="file-upload" id="file-drag">
+    <img id="file-image" src="#" alt="Preview" class="hidden">
+    <div id="start" class="banner">
+      <div class="file-upload-txt">
+        <div>Select a file or drag here</div>
+        <div id="notimage" class="hidden">Please select an image</div>
+      {# form.banner_img.label(id="file-upload-btn",class="btn btn-primary") #}
+        <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+      </div>
+    </div>
+    </div>
+ <div class="blog">
+        
+    {{ form.title(class="title",placeholder="Blog Title") }}
+<br><br><br>
+    {{ form.content(placeholder="Start Writing Here...") }}
+    </div>
+
+    <div class="blog-options">
+        {{ form.submit(class="btn dark publish-btn") }}
+    </div>
+     {{ ckeditor.load() }}
+    {{ ckeditor.config(body='content')}}
+  </label>
+</form>
+  
+  
+</div>
+{% else %}
+
+<h2>Must be logged in...</h2>
+<p>Sorry,you must be logged in to access this page.</p>
+<a href="{{ url_for('login') }}">Login Here</a>
+{% endif %}
+{% endblock %}
+{% block footer %}
+<script type="text/javascript" src="{{ url_for('static',filename='js/banner.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us{% endblock %}
+
+
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+
+
+{% block content %}
+<div class="about">
+
+    <!--   parallax section -->
+    <div class="container-1">
+      <div class="parallax heading-2">
+        <h1>about us</h1>
+      </div>
+    </div>
+  
+    <!--   About us section -->
+    <section class="row">
+  
+      <div class="col-2">
+        <img src="{{ url_for('static',filename='img/image.png')}}" alt="about-img">
+      </div>
+  
+      <div class="col-2">
+        <h3>why choose us?</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure numquam nulla iusto corporis dolor commodi libero, vitae obcaecati optio rerum ab culpa nesciunt, earum mollitia quasi ipsam non. Aliquid, iure.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid rerum, delectus voluptate aliquam quaerat iusto repellendus error nulla ab atque.</p>
+
+        
+        <div class="icons-container">
+
+
+        <a href="{{ url_for('upload') }}">
+          <div class="icons up">
+            <i class="fa fa-magnifying-glass-plus"></i>
+            <span>High detection</span>
+          </div>
+        </a>
+
+        <a href="{{ url_for('advices') }}">
+          <div class="icons down">
+            <i class="fas fa-hand-holding-medical"></i>
+            <span>Medical Advices</span>
+          </div>
+        </a>
+
+        <a href="#contact">
+          <div class="icons up">
+            <i class="fas fa-headset"></i>
+            <span>24/7 guide service</span>
+          </div>
+        </a>
+
+        </div>
+      </div>
+  
+    </section>
+  
+    <!--   our team section -->
+    <div class="our-team">
+      <h1 class="heading-title"> our team </h1>
+      <div class="row-2">
+  
+        <!--       member section -->
+        <div class="col-4">
+          <div class="item">
+            <div class="box">
+              <div class="inner">
+                <div class="photo">
+                  <img class="profile-image" src="{{ url_for('static',filename='img/default_profile_pic.png') }}" alt="">
+                </div>
+                <div class="info">
+                  <h3>Ghada Ahmed</h3>
+                  <h4>web design</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--       end member -->
+  
+        <!--       member section -->
+        <div class="col-4">
+          <div class="item">
+            <div class="box">
+              <div class="inner">
+                <div class="photo">
+                  <img class="profile-image" src="{{ url_for('static',filename='img/default_profile_pic.png') }}" alt="">
+                </div>
+                <div class="info">
+                  <h3>Fatma Ayman</h3>
+                  <h4>web design</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--       end member -->
+  
+        <!--       member section -->
+        <div class="col-4">
+          <div class="item">
+            <div class="box">
+              <div class="inner">
+                <div class="photo">
+                  <img class="profile-image" src="{{ url_for('static',filename='img/default_profile_pic.png') }}" alt="">
+                </div>
+                <div class="info">
+                  <h3>Fawzia Faraag</h3>
+                  <h4>web design</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--       end member -->
+  
+      </div>
+  
+      <div class="row-2">
+        <!--       member section -->
+        <div class="col-4">
+          <div class="item">
+            <div class="box">
+              <div class="inner">
+                <div class="photo">
+                  <img class="profile-image" src="{{ url_for('static',filename='img/default_profile_pic.png') }}" alt="">
+                </div>
+                <div class="info">
+                  <h3>Shimaa Radwan</h3>
+                  <h4>web design</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--       end member -->
+  
+        <!--       member section -->
+        <div class="col-4">
+          <div class="item">
+            <div class="box">
+              <div class="inner">
+                <div class="photo">
+                  <img class="profile-image" src="{{ url_for('static',filename='img/default_profile_pic.png') }}" alt="">
+                </div>
+                <div class="info">
+                  <h3>Marvy Ayman</h3>
+                  <h4>web design</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--       end member -->
+      </div>
+    </div>
+    <!--   end our team section -->
+  
+    <!-- contact section  starts-->
+  
+    <div class="row contact-row" id="contact">
+      <div class="col-1 contact-col">
+        <h3>How you can find us</h3>
+        <div class="contact-section">
+          <div class="info">
+            <i class="fas fa-phone"></i>
+            <p>011111111</p>
+          </div>
+          <div class="info">
+            <i class="fas fa-envelope"></i>
+            <p>johnsmith@example.com</p>
+          </div>
+          <div class="info">
+            <i class="fas fa-location-dot"></i>
+            <p>Computer and Information, Menofia, Egypt</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-1">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3435.0663970418805!2d31.010707385393182!3d30.575671000237257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7d6bf14e416e9%3A0xc49ca19e02abe2d2!2z2YPZhNmK2Kkg2KfZhNit2KfYs9io2KfYqiDZiCDYp9mE2YXYudmE2YjZhdin2Ko!5e0!3m2!1sar!2seg!4v1649968363864!5m2!1sar!2seg" width="600" height="340" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  
+    <!-- contact section ends -->
+  
+    <!-- reviews section starts  -->
+  
+    <div class="testimonial">
+      <div class="small-container">
+        <h1 class="heading-title"> Patient Says </h1>
+        <div class="line"></div>
+        <div class="row">
+          <div class="col-3">
+            <i class="fa fa-quote-left"></i>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+              temporibus non sapiente nemo autem illo! Ea sunt corporis officia
+              inventore.
+            </p>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <img src="../static/images/image/user-1.jpg" alt="">
+            <h3>Nilay Hirpara</h3>
+          </div>
+          <div class="col-3">
+            <i class="fa fa-quote-left"></i>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+              temporibus non sapiente nemo autem illo! Ea sunt corporis officia
+              inventore.
+            </p>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <img src="../static/images/image/user-2.jpg" alt="">
+            <h3>Pranav Badgal</h3>
+          </div>
+          <div class="col-3">
+            <i class="fa fa-quote-left"></i>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+              temporibus non sapiente nemo autem illo! Ea sunt corporis officia
+              inventore.
+            </p>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <img src="../static/images/image/user-3.jpg" alt="">
+            <h3>Navnit Kumar</h3>
+          </div>
+        </div>
+      </div>
+      <!--    end reviews -->
+  
+    </div>
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}

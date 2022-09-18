@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS style -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/reset.css') }}">
+    <!-- fontawseome  -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='font/fontawesome-free-6.1.1-web/css/all.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/faq.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/handleException.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/upload.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/advices.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/contact.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/editPost.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/showPost.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/posts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/profile.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/edit_profile.css') }}">
+    
+
+    <title>{% block title %}{% endblock %} | 7yah</title>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% block header %}{% endblock %}
+
+
+    {% block content %}{% endblock %}
+
+
+
+    {% block footer %}  
+      <!-- Script & footer -->
+    {% endblock %}
+
+    
+
+</body>
+</html>

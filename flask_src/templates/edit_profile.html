@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Privacy{% endblock %}
+
+
+{% block header %}
+{% include 'header.html' %}
+{% endblock %}
+{% block content %}
+
+<div class="manage-profile">
+
+  <div class="manage-profile-title">Privacy</div>
+  <hr>
+  {% include 'messages.html' %}
+
+  <!-- change password  -->
+  <div class="manage-profile-subtitle">change password</div>
+
+  <form action="" method="post" class="manage-profile-form">
+    {{ change_pass_form.hidden_tag() }}
+    <div class="manage-profile-txt-field">
+        {{ change_pass_form.old_pwd.label(class="manage-profile-label") }}              
+        {{ change_pass_form.old_pwd() }}
+    </div>
+    <div class="manage-profile-txt-field">
+      {{ change_pass_form.password.label(class="manage-profile-label") }}              
+        {{ change_pass_form.password() }}
+    </div>
+    <div class="manage-profile-txt-field">
+      {{ change_pass_form.confirm.label(class="manage-profile-label") }}              
+        {{ change_pass_form.confirm() }}
+    </div>
+    {{ form.submit(class="btn",value="update new password") }}
+  </form>
+  <hr>
+
+  <!-- delete account -->
+  <div class="manage-profile-subtitle">delete account</div>
+
+  <div class="manage-profile-close">
+    <p> When you delete your account, you will not be able to retrieve the content or information that you have shared.
+      <span> Warning:</span>Closing your account is irreversible.
+    </p>
+    <a href="{{ url_for('delete',pk = current_user.id) }}" class="btn">delete account</a>
+  </div>
+
+</div>
+
+
+
+{% endblock %}
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock %}
