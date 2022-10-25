@@ -1,7 +1,7 @@
 # Lung Cancer Detection - 7yah
 
 ## overview
-this project made for people who complain from lung cancer issues. the project support blog from doctors to help people get advice. there is also an admin page for managing website.
+this project is made for people who complain of lung cancer issues. the project support blog from doctors to help people get advice. there is also an admin page for managing website.
 
 ## Language used :
 * HTML
